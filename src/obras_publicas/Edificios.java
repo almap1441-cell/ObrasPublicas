@@ -50,7 +50,7 @@ public class Edificios{
         System.out.println("Consumo electrico total "+ consumoT);
         System.out.println("Edificios implemetados");
         //se recorre el arreglo actual y se muestra los productos guardados
-        for (int i = 0; i < this.contadorEstructuras; i++) {
+        for (int i = 0; i < contadorEstructuras; i++) {
             System.out.println(this.edificios[i]);
         }
     }    
