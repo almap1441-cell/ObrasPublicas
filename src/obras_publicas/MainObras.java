@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author AlmaPalacios
  */
 public class MainObras {
-
+    
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -16,7 +16,7 @@ public class MainObras {
         // Creamos el sistema principal
         Obra_publica sistema = new Obra_publica();
 
-        int opcion = 0; // Lo dejamos en 0 porque necesitamos inicializar la variable
+        int opcion = 0;
 
         do {
 
@@ -30,7 +30,11 @@ public class MainObras {
 
             // Verificamos que el usuario escriba un número
             if (!sc.hasNextInt()) {
-                System.out.println("Debe ingresar un numero del 1 al 4.");
+
+                System.out.println(
+                        "Debe ingresar un numero del 1 al 4."
+                );
+
                 sc.next();
                 continue;
             }
@@ -186,6 +190,7 @@ public class MainObras {
 
                     int tipo = sc.nextInt();
 
+                    // Variable que guardará la estructura creada
                     Estructura nueva = null;
 
                     switch (tipo) {
@@ -258,7 +263,7 @@ public class MainObras {
                             }
 
                             // Creamos una Escuela
-                            nueva = new Escuelas(
+                            nueva = new Escuela(
                                     habitantes,
                                     consumo,
                                     aulas
@@ -351,13 +356,33 @@ public class MainObras {
                     }
 
                     // Si se creó correctamente la estructura,
-                    // la agregamos al plano
+                    // podemos asignarle el color de la fachada
                     if (nueva != null) {
 
+                        System.out.print(
+                                "Color de fachada (deje vacio para 'Blanco'): "
+                        );
+
+                        // Limpiamos el salto de línea que quedó
+                        // después de utilizar nextInt()
+                        sc.nextLine();
+
+                        // Leemos el color escrito por el usuario
+                        String color = sc.nextLine();
+
+                        // Si escribió un color, lo asignamos
+                        // mediante el setter
+                        if (!color.trim().isEmpty()) {
+
+                            nueva.setColorFachada(color);
+                        }
+
+                        // Agregamos la estructura al plano
                         plano.agregarEdificios(nueva);
 
                     } else {
 
+                        // Si no se creó ninguna estructura
                         System.out.println(
                                 "No se agrego ninguna estructura."
                         );
