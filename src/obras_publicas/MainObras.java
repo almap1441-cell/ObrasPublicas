@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author AlmaPalacios
  */
 public class MainObras {
-    
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -36,10 +36,12 @@ public class MainObras {
                 );
 
                 sc.next();
-                continue;
-            }
+                opcion = 0;
 
-            opcion = sc.nextInt();
+            } else {
+
+                opcion = sc.nextInt();
+            }
 
             switch (opcion) {
 
@@ -48,8 +50,6 @@ public class MainObras {
                     // Creamos un nuevo plano
                     Edificios nuevo = sistema.crearPlano();
 
-                    // Si el plano se creó correctamente,
-                    // mostramos su número
                     if (nuevo != null) {
 
                         System.out.println(
@@ -63,8 +63,6 @@ public class MainObras {
 
                     } else {
 
-                        // Este mensaje aparece cuando
-                        // ya existen 10 planos
                         System.out.println(
                                 "No fue posible crear el plano."
                         );
@@ -79,7 +77,6 @@ public class MainObras {
                             "Ingrese el numero de plano: "
                     );
 
-                    // Verificamos que escriban un número
                     if (!sc.hasNextInt()) {
 
                         System.out.println(
@@ -87,6 +84,7 @@ public class MainObras {
                         );
 
                         sc.next();
+
                         break;
                     }
 
@@ -105,7 +103,7 @@ public class MainObras {
                     // Buscamos el plano
                     Edificios plano = sistema.getPlano(numPlano);
 
-                    // Si no existe el plano mostramos un mensaje
+                    // Verificamos que el plano exista
                     if (plano == null) {
 
                         System.out.println(
@@ -125,6 +123,7 @@ public class MainObras {
                         );
 
                         sc.next();
+
                         break;
                     }
 
@@ -152,6 +151,7 @@ public class MainObras {
                         );
 
                         sc.next();
+
                         break;
                     }
 
@@ -177,7 +177,6 @@ public class MainObras {
                     System.out.println("4. Hospital");
                     System.out.print("Opcion: ");
 
-                    // Verificamos que sea un número
                     if (!sc.hasNextInt()) {
 
                         System.out.println(
@@ -185,6 +184,7 @@ public class MainObras {
                         );
 
                         sc.next();
+
                         break;
                     }
 
@@ -209,6 +209,7 @@ public class MainObras {
                                 );
 
                                 sc.next();
+
                                 break;
                             }
 
@@ -247,6 +248,7 @@ public class MainObras {
                                 );
 
                                 sc.next();
+
                                 break;
                             }
 
@@ -285,6 +287,7 @@ public class MainObras {
                                 );
 
                                 sc.next();
+
                                 break;
                             }
 
@@ -323,6 +326,7 @@ public class MainObras {
                                 );
 
                                 sc.next();
+
                                 break;
                             }
 
@@ -355,24 +359,22 @@ public class MainObras {
                             );
                     }
 
-                    // Si se creó correctamente la estructura,
-                    // podemos asignarle el color de la fachada
+                    // Si se creó correctamente la estructura
                     if (nueva != null) {
 
                         System.out.print(
-                                "Color de fachada (deje vacio para 'Blanco'): "
+                                "Color de fachada "
+                                + "(deje vacio para 'Blanco'): "
                         );
 
-                        // Limpiamos el salto de línea que quedó
-                        // después de utilizar nextInt()
+                        // Limpiamos el salto de línea
                         sc.nextLine();
 
-                        // Leemos el color escrito por el usuario
+                        // Leemos el color
                         String color = sc.nextLine();
 
                         // Si escribió un color, lo asignamos
-                        // mediante el setter
-                        if (!color.trim().isEmpty()) {
+                        if (!color.isEmpty()) {
 
                             nueva.setColorFachada(color);
                         }
@@ -382,7 +384,6 @@ public class MainObras {
 
                     } else {
 
-                        // Si no se creó ninguna estructura
                         System.out.println(
                                 "No se agrego ninguna estructura."
                         );
@@ -410,7 +411,8 @@ public class MainObras {
 
                     // Si escriben una opción que no existe
                     System.out.println(
-                            "Opcion no valida. Seleccione una opcion del 1 al 4."
+                            "Opcion no valida. "
+                            + "Seleccione una opcion del 1 al 4."
                     );
             }
 
