@@ -58,17 +58,22 @@ public class Obra_publica {
         return planos[numero - 1];
     }
 
-    // Muestra todos los planos registrados
     public void mostrarSistema() {
 
-        System.out.println("SISTEMA DE OBRAS PUBLICAS");
-
-        // Recorremos solamente los planos que existen
-        for (int i = 0; i < contadorPlanos; i++) {
-
-            planos[i].mostrarEdificios();
-
-            System.out.println();
-        }
+    // Verificamos si todavía no hay planos
+    if (contadorPlanos == 0) {
+        System.out.println("No hay planos registrados.");
+        return;
     }
+
+    System.out.println("SISTEMA DE OBRAS PUBLICAS");
+
+    // Recorremos los planos existentes
+    for (int i = 0; i < contadorPlanos; i++) {
+
+        planos[i].mostrarEdificios();
+
+        System.out.println("-----------------------------");
+    }
+}
 }

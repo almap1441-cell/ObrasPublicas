@@ -263,7 +263,7 @@ public class MainObras {
                             }
 
                             // Creamos una Escuela
-                            nueva = new Escuela(
+                            nueva = new Escuelas(
                                     habitantes,
                                     consumo,
                                     aulas

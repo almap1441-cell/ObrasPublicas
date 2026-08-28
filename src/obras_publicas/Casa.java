@@ -29,13 +29,6 @@ public class Casa extends Estructura {
 
     // Cambia el número de habitaciones
     public void setNumHabitaciones(int numHabitaciones) {
-
-        if (numHabitaciones < 0) {
-            throw new IllegalArgumentException(
-                    "El número de habitaciones no puede ser negativo"
-            );
-        }
-
         this.numHabitaciones = numHabitaciones;
     }
 

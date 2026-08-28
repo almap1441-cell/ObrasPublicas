@@ -29,13 +29,6 @@ public class Oficina extends Estructura {
 
     // Cambia el número de pisos
     public void setNumPisos(int numPisos) {
-
-        if (numPisos < 0) {
-            throw new IllegalArgumentException(
-                    "El número de pisos no puede ser negativo"
-            );
-        }
-
         this.numPisos = numPisos;
     }
 

@@ -66,37 +66,16 @@ public class Estructura {
 
     // Cambia la cantidad de habitantes
     public void setHabitantes(int habitantes) {
-
-        if (habitantes < 0) {
-            throw new IllegalArgumentException(
-                    "Los habitantes no pueden ser negativos"
-            );
-        }
-
         this.habitantes = habitantes;
     }
 
     // Cambia el consumo eléctrico
     public void setConsumoElectrico(double consumoElectrico) {
-
-        if (consumoElectrico < 0) {
-            throw new IllegalArgumentException(
-                    "El consumo eléctrico no puede ser negativo"
-            );
-        }
-
         this.consumoElectrico = consumoElectrico;
     }
 
     // Cambia el color de la fachada
     public void setColorFachada(String colorFachada) {
-
-        if (colorFachada == null || colorFachada.trim().isEmpty()) {
-            throw new IllegalArgumentException(
-                    "El color no puede estar vacío"
-            );
-        }
-
         this.colorFachada = colorFachada;
     }
 
