@@ -37,6 +37,7 @@ public class MainObras {
 
                 sc.next();
                 opcion = 0;
+                        
 
             } else {
 
