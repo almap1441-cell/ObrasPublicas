@@ -29,13 +29,6 @@ public class Escuelas extends Estructura {
 
     // Cambia el número de aulas
     public void setNumAulas(int numAulas) {
-
-        if (numAulas < 0) {
-            throw new IllegalArgumentException(
-                    "El número de aulas no puede ser negativo"
-            );
-        }
-
         this.numAulas = numAulas;
     }
 

@@ -29,13 +29,6 @@ public class Hospital extends Estructura {
 
     // Cambia el número de camas
     public void setNumCamas(int numCamas) {
-
-        if (numCamas < 0) {
-            throw new IllegalArgumentException(
-                    "El número de camas no puede ser negativo"
-            );
-        }
-
         this.numCamas = numCamas;
     }
 
